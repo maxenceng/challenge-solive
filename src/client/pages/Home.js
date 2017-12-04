@@ -2,8 +2,6 @@
 
 import React from 'react'
 
-import Message from '../containers/Message'
-import Button from '../containers/Button'
 import DynamicHelmet from '../components/DynamicHelmet'
 
 /**
@@ -18,7 +16,5 @@ export default () =>
         keywords="Solive template"
       />
       <h1>Template</h1>
-      <Message />
-      <Button />
     </div>
   )

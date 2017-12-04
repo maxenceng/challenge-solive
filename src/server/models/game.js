@@ -15,4 +15,4 @@ const gameSchema = new Mongoose.Schema({
   },
 })
 
-export default Mongoose.model('game', gameSchema)
+export default Mongoose.model('Game', gameSchema)

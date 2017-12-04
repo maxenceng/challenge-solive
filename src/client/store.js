@@ -2,6 +2,7 @@
 
 import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import promise from 'redux-promise'
 import immutable from 'immutable'
 import logger from 'redux-logger'
 
@@ -16,6 +17,8 @@ const preloadedState = window.__PRELOADED_STATE__
  */
 export default createStore(
   reducers,
-  { test: immutable.fromJS(preloadedState.test) },
-  IS_PROD ? applyMiddleware(thunkMiddleware) : applyMiddleware(thunkMiddleware, logger),
+  {
+    players: immutable.fromJS(preloadedState.players),
+  },
+  IS_PROD ? applyMiddleware(thunkMiddleware, promise) : applyMiddleware(thunkMiddleware, promise, logger),
 )

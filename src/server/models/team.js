@@ -3,8 +3,8 @@
 import Mongoose from 'mongoose'
 
 const teamSchema = new Mongoose.Schema({
-  id: Number,
+  _id: Number,
   name: String,
 })
 
-export default Mongoose.model('team', teamSchema)
+export default Mongoose.model('Team', teamSchema)

@@ -9,7 +9,9 @@
     "no-unexpected-multiline": 2,
     "spaced-comment": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/no-array-index-key": 0
+    "react/no-array-index-key": 0,
+    "no-restricted-syntax": "off",
+    "max-len":"off"
   },
   "env": {
     "jest": true,

@@ -11,7 +11,9 @@ import { ROUTES } from '../../utils/routes'
 const routesList = (): Array<any> => {
   const res = []
   ROUTES.forEach((value, key) => {
-    res.push(<li key={key}><NavLink className="navbar-item" to={value[0]}>{key}</NavLink></li>)
+    if (value[1] !== null) {
+      res.push(<li key={key}><NavLink className="navbar-item" to={value[0]}>{key}</NavLink></li>)
+    }
   })
   return res
 }

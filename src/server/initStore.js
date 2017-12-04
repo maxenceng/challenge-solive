@@ -4,7 +4,7 @@ import Immutable from 'immutable'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
-import testReducer from '../client/reducers/testReducer'
+import playersReducer from '../client/reducers/playersReducer'
 
 /**
  * Initiates the store on the server
@@ -13,12 +13,12 @@ import testReducer from '../client/reducers/testReducer'
 export default (plainState: ?Object) => {
   const preloadedState = plainState ? {} : undefined
 
-  if (plainState && plainState.test) {
+  if (plainState && plainState.players) {
     // flow-disable-next-line
-    preloadedState.test = testReducer(undefined, {}).merge(Immutable.fromJS(plainState.test))
+    preloadedState.players = playersReducer(undefined, {}).merge(Immutable.fromJS(plainState.players))
   }
   return createStore(
-    combineReducers({ test: testReducer }),
+    combineReducers({ players: playersReducer }),
     preloadedState,
     applyMiddleware(thunkMiddleware),
   )
