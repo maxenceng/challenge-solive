@@ -1,0 +1,8 @@
+node_modules/
+yarn.lock
+coverage/
+.idea/
+.DS_Store
+.tern-project
+dist/
+static/js/
