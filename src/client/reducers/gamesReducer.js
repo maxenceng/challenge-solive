@@ -4,10 +4,10 @@ import Immutable from 'immutable'
 import type { fromJS as ImmutType } from 'immutable'
 
 import {
-  FETCHING_PLAYERS_INFO,
-  FETCHING_PLAYERS_INFO_SUCCESS,
-  FETCHING_PLAYERS_INFO_ERROR,
-} from '../actions/playersAction'
+  FETCHING_GAMES_INFO,
+  FETCHING_GAMES_INFO_SUCCESS,
+  FETCHING_GAMES_INFO_ERROR,
+} from '../actions/gamesAction'
 
 /**
  * Initial state of the reducer
@@ -31,21 +31,21 @@ export default (
   action: { type: string, payload: any },
 ): ImmutType => {
   switch (action.type) {
-    case FETCHING_PLAYERS_INFO:
+    case FETCHING_GAMES_INFO:
       return state.merge({
         isFetching: true,
         data: [],
         hasError: false,
         errorMessage: null,
       })
-    case FETCHING_PLAYERS_INFO_SUCCESS:
+    case FETCHING_GAMES_INFO_SUCCESS:
       return state.merge({
         isFetching: false,
         data: action.payload,
         hasError: false,
         errorMessage: null,
       })
-    case FETCHING_PLAYERS_INFO_ERROR:
+    case FETCHING_GAMES_INFO_ERROR:
       return state.merge({
         isFetching: false,
         data: [],

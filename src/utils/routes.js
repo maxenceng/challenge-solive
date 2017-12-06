@@ -1,12 +1,10 @@
 // @flow
 
 import Home from '../client/pages/Home'
-import Settings from '../client/pages/Settings'
 import NotFound from '../client/pages/404'
 
 // Routes
 export const HOME_ROUTE = '/'
-export const SETTINGS_ROUTE = '/settings'
 export const GAME_ROUTE = '/games'
 export const MEDIA_ROUTE = '/medias'
 export const PLAYER_ROUTE = '/players'
@@ -15,7 +13,6 @@ export const NOT_FOUND_ROUTE = '/*'
 
 // Route labels
 export const HOME_LABEL = 'Home'
-export const SETTINGS_LABEL = 'Settings'
 export const GAME_LABEL = 'Games'
 export const MEDIA_LABEL = 'Medias'
 export const PLAYER_LABEL = 'Players'
@@ -26,7 +23,6 @@ export const NOT_FOUND_LABEL = 'Not Found'
 // Map of routes
 export const ROUTES: Map<string, Array<any>> = new Map()
 ROUTES.set(HOME_LABEL, [HOME_ROUTE, Home])
-ROUTES.set(SETTINGS_LABEL, [SETTINGS_ROUTE, Settings])
 ROUTES.set(GAME_LABEL, [GAME_ROUTE, null])
 ROUTES.set(MEDIA_LABEL, [MEDIA_ROUTE, null])
 ROUTES.set(PLAYER_LABEL, [PLAYER_ROUTE, null])

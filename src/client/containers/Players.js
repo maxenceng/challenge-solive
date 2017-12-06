@@ -6,6 +6,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes'
 
 import { fetchPlayers } from '../actions/playersAction'
 import { initialState } from '../reducers/playersReducer'
+import SelectedPlayer from '../containers/SelectedPlayer'
 
 /**
  * Maps the text when triggered, here it is on first load
@@ -36,10 +37,17 @@ class Players extends React.Component<Props> {
     if (players.get('hasError')) {
       return <p>{players.get('errorMessage')}</p>
     }
-    console.log(players.toJS())
-    // const data = players.get('data')
+
+    const data = players.get('data')
     const res = []
-    return res
+    data.forEach((value, key) => {
+      /* eslint-disable function-paren-newline */
+      res.push(
+        <option key={key} value={value.get('_id')}>{value.get('firstName')} {value.get('lastName')}</option>,
+      )
+      /* eslint-enable function-paren-newline */
+    })
+    return <SelectedPlayer options={res} />
   }
 
   render() {

@@ -2,7 +2,16 @@
 
 import Router from 'koa-router'
 
-import { getAll, getOne, create, update, remove } from '../controllers/mediaController'
+import {
+  getAll,
+  getOneById,
+  getOneByTeamId,
+  getTwoByTeamId,
+  getOneByPlayerId,
+  create,
+  update,
+  remove,
+} from '../controllers/mediaController'
 
 const index = new Router()
 
@@ -10,7 +19,10 @@ const index = new Router()
  * Calls the get function in our controller for our index route of this subrouter
  */
 index.get('/', getAll)
-index.get('/:id', getOne)
+index.get('/:id', getOneById)
+index.get('/team/:id', getOneByTeamId)
+index.get('/teams/:id1/:id2', getTwoByTeamId)
+index.get('/player/:id', getOneByPlayerId)
 index.post('/', create)
 index.put('/:id', update)
 index.delete('/:id', remove)

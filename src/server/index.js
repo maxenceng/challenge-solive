@@ -11,7 +11,6 @@ import Router from 'koa-router'
 import Mongoose from 'mongoose'
 
 import index from './routes/indexRoute'
-import settings from './routes/settingsRoute'
 import game from './routes/gameRoute'
 import media from './routes/mediaRoute'
 import player from './routes/playerRoute'
@@ -20,7 +19,6 @@ import notFound from './routes/404Route'
 import { IS_PROD, STATIC_PATH, WEB_PORT, MONGO_SERVER, DB_NAME } from '../utils/config'
 import {
   HOME_ROUTE,
-  SETTINGS_ROUTE,
   GAME_ROUTE,
   MEDIA_ROUTE,
   PLAYER_ROUTE,
@@ -45,7 +43,6 @@ app.use(Mount(`/${STATIC_PATH}`, Serve(STATIC_PATH)))
 
 // Routes everything we have on the server
 router.use(HOME_ROUTE, index.routes())
-router.use(SETTINGS_ROUTE, settings.routes())
 router.use(GAME_ROUTE, game.routes())
 router.use(MEDIA_ROUTE, media.routes())
 router.use(PLAYER_ROUTE, player.routes())

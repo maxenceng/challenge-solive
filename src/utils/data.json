@@ -40,30 +40,30 @@
 
     "teams": [
         {
-            "id": 1234,
+            "_id": 1234,
             "name": "Paris Saint Germain"
         },
         {
-            "id": 5678,
+            "_id": 5678,
             "name": "Bastia"
         }
     ],
 
     "players": [
         {
-            "id": 41231,
+            "_id": 41231,
             "firstName": "Edison",
             "lastName": "Cavani",
             "teamId": 1234
         },
         {
-            "id": 12378,
+            "_id": 12378,
             "firstName": "Serge",
             "lastName": "Aurier",
             "teamId": 1234
         },
         {
-            "id": 35678,
+            "_id": 35678,
             "firstName": "Blaise",
             "lastName": "Matuidi",
             "teamId": 5678

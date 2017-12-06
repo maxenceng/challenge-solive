@@ -18,7 +18,13 @@ const preloadedState = window.__PRELOADED_STATE__
 export default createStore(
   reducers,
   {
+    games: immutable.fromJS(preloadedState.games),
     players: immutable.fromJS(preloadedState.players),
+    selectedGame: immutable.fromJS(preloadedState.selectedGame),
+    selectedPlayer: immutable.fromJS(preloadedState.selectedPlayer),
+    teams: immutable.fromJS(preloadedState.teams),
+    teamsMedias: immutable.fromJS(preloadedState.teamsMedias),
+    playerMedia: immutable.fromJS(preloadedState.playerMedia),
   },
-  IS_PROD ? applyMiddleware(thunkMiddleware, promise) : applyMiddleware(thunkMiddleware, promise, logger),
+  IS_PROD ? applyMiddleware(thunkMiddleware, promise) : applyMiddleware(thunkMiddleware, promise) //, logger),
 )
