@@ -15,7 +15,11 @@ export const fetchingData = createAction(FETCHING_TEAMS_INFO)
 export const fetchingSuccess = createAction(FETCHING_TEAMS_INFO_SUCCESS)
 export const fetchingError = createAction(FETCHING_TEAMS_INFO_ERROR)
 
-
+/**
+ * gets informations about the two teams
+ * @param  {ImmutType} game
+ * @return {Function} dispatch
+ */
 export function getTeams(game: ImmutType) {
   return (dispatch: Function) => {
     dispatch(fetchingData())

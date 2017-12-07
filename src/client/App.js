@@ -32,7 +32,7 @@ const createRoutes = (routes: Map<string, Array<any>>): Array<any> => {
  */
 export default () =>
   (
-    <div>
+    <div className="container">
       <Switch>
         {createRoutes(ROUTES)}
       </Switch>

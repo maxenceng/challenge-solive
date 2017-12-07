@@ -2,28 +2,36 @@
 
 import React from 'react'
 
+import Card from './Card'
+
 /**
  * @type {Object}
  */
 type Props = {
   player: Object,
-  team: Object,
-  game: Object,
+  homeTeam: Object,
+  awayTeam: Object,
+  date: string,
 }
 
 /**
+ * Displays content given as a parameter
  * @param  {Object} player
- * @param  {Object} team
- * @param  {Object} game
+ * @param  {Object} homeTeam
+ * @param  {Object} awayTeam
+ * @param  {string} date
  */
-export default ({ player, team, game }: Props) =>
+export default ({
+  player,
+  homeTeam,
+  awayTeam,
+  date,
+}: Props) =>
   (
-    <div>
-      <img src={player.image} alt={player.name} />
-      <p>{player.name}</p>
-      <img src={team.image} alt={team.name} />
-      <p>{team.name}</p>
-      <p>{game.score}</p>
-      <p>{game.date}</p>
+    <div className="flex">
+      <Card img={player.img} title={`${player.firstName} ${player.lastName}`} text={null} />
+      <Card img={homeTeam.img} title={homeTeam.name} text={`Score: ${homeTeam.score}`} />
+      <Card img={awayTeam.img} title={awayTeam.name} text={`Score: ${awayTeam.score}`} />
+      <Card img="/static/images/calendar.png" title="Date" text={date} />
     </div>
   )

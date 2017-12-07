@@ -10,9 +10,9 @@ export default () =>
   (
     <div>
       <DynamicHelmet
-        title="Not Found - React Koa Boilerplate"
-        description="React Koa Boilerplate 404 Page Not Found"
-        keywords="React Koa Boilerplate SSR Redux"
+        title="Not Found - Challenge Solive"
+        description="Challenge Solive page not found"
+        keywords="Solive Challenge 404 Not Found"
       />
       <p>404 Not Found!</p>
     </div>

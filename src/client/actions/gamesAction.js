@@ -13,6 +13,10 @@ export const fetchingData = createAction(FETCHING_GAMES_INFO)
 export const fetchingSuccess = createAction(FETCHING_GAMES_INFO_SUCCESS)
 export const fetchingError = createAction(FETCHING_GAMES_INFO_ERROR)
 
+/**
+ * gets all the games in the DB
+ * @return {Function} dispatch
+ */
 export function fetchGames() {
   return (dispatch: Function) => {
     dispatch(fetchingData())

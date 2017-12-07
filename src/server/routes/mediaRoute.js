@@ -15,9 +15,6 @@ import {
 
 const index = new Router()
 
-/**
- * Calls the get function in our controller for our index route of this subrouter
- */
 index.get('/', getAll)
 index.get('/:id', getOneById)
 index.get('/team/:id', getOneByTeamId)

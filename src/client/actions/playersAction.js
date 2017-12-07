@@ -13,6 +13,10 @@ export const fetchingData = createAction(FETCHING_PLAYERS_INFO)
 export const fetchingSuccess = createAction(FETCHING_PLAYERS_INFO_SUCCESS)
 export const fetchingError = createAction(FETCHING_PLAYERS_INFO_ERROR)
 
+/**
+ * gets all the players in the DB
+ * @return {Function} dispatch
+ */
 export function fetchPlayers() {
   return (dispatch: Function) => {
     dispatch(fetchingData())

@@ -1,26 +1,17 @@
 // @flow
 
-// import { APP_NAME } from '../../utils/config'
 import renderApp from '../renderApp'
-import { homePage } from '../defaultState'
 
 /**
+ * Renders the home page
  * @param  {Object}   ctx
  * @param  {Function} next
  * @return {Promise}
  */
 const get = async (ctx: Object, next: Function): Promise<any> => {
   await next()
-  ctx.body = renderApp(ctx.url, homePage())
+  ctx.body = renderApp(ctx.url)
 }
 
-/**
- * @param  {Object}   ctx
- * @param  {Function} next
- * @return {Promise}
- */
-const post = async (ctx: Object, next: Function): Promise<any> => {
-  await next()
-}
-
-export { get, post }
+// eslint-disable-next-line import/prefer-default-export
+export { get }

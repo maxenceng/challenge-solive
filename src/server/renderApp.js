@@ -30,5 +30,6 @@ export default (location: string, initialState: ?Object, routerContext: ?Object 
     </Provider>)
   const head = Helmet.rewind()
   const tpl = template(head.title, head.meta, appHtml, store)
+  // If we are in production, we minify the html template
   return IS_PROD ? oneLine`${tpl}` : tpl
 }

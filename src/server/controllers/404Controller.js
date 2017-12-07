@@ -3,6 +3,7 @@
 import renderApp from '../renderApp'
 
 /**
+ * Renders the 404 Not Found page
  * @param  {Object}   ctx
  * @param  {Function} next
  * @return {Promise}
@@ -12,13 +13,5 @@ const get = async (ctx: Object, next: Function): Promise<any> => {
   ctx.body = renderApp(ctx.url)
 }
 
-/**
- * @param  {Object}   ctx
- * @param  {Function} next
- * @return {Promise}
- */
-const post = async (ctx: Object, next: Function): Promise<any> => {
-  await next()
-}
-
-export { get, post }
+// eslint-disable-next-line import/prefer-default-export
+export { get }

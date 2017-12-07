@@ -26,6 +26,7 @@ import {
   NOT_FOUND_ROUTE,
 } from '../utils/routes'
 
+// Connection to MongoDB
 Mongoose.Promise = global.Promise
 Mongoose.connect(`mongodb://${MONGO_SERVER}/${DB_NAME}`, { useMongoClient: true })
 
@@ -49,6 +50,7 @@ router.use(PLAYER_ROUTE, player.routes())
 router.use(TEAM_ROUTE, team.routes())
 router.use(NOT_FOUND_ROUTE, notFound.routes())
 
+// Connects the router to the app
 app.use(router.routes())
 app.use(router.allowedMethods())
 

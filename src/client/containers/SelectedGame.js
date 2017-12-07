@@ -11,12 +11,15 @@ import { getTeams } from '../actions/teamsAction'
 import { getTeamsMedias } from '../actions/teamsMediasAction'
 
 /**
- * Maps the text when triggered, here it is on first load
+ * Maps the games from the store
  */
 const mapStateToProps = state => ({
   games: state.games,
 })
 
+/**
+ * @type {Object}
+ */
 type Props = {
   updateGameSelect: Function,
   getTeams: Function,
@@ -26,13 +29,24 @@ type Props = {
   games: ImmutablePropTypes.map,
 }
 
+/**
+ * Displays the select dropdown with the options passed to it for the game dropdown
+ * @extends React.Component
+ */
 class selectedGame extends React.Component<Props> {
+  /**
+   * @param  {Object} props
+   */
   constructor(props) {
     super(props)
     // flow-disable-next-line
     this.handleChange = this.handleChange.bind(this)
   }
 
+  /**
+   * dispatches actions if a game has been selected in the dropdown
+   * @param  {Object} event
+   */
   handleChange(event) {
     const { value } = event.target
     const { games } = this.props
@@ -44,8 +58,12 @@ class selectedGame extends React.Component<Props> {
     }
   }
 
+  /**
+   * Renders our Select component with all the data needed to have a dropdown for the games
+   * @return {Object}
+   */
   render() {
-    return <Select onchange={this.handleChange} options={this.props.options} />
+    return <Select onchange={this.handleChange} options={this.props.options} label="Games" />
   }
 }
 

@@ -15,6 +15,11 @@ export const fetchingSuccess = createAction(FETCHING_PLAYER_MEDIA_INFO_SUCCESS)
 export const fetchingError = createAction(FETCHING_PLAYER_MEDIA_INFO_ERROR)
 
 
+/**
+ * gets the selected player media
+ * @param  {string} playerId
+ * @return {Function} dispatch
+ */
 export function getPlayerMedia(playerId: string) {
   return (dispatch: Function) => {
     dispatch(fetchingData())

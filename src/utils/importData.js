@@ -12,15 +12,29 @@ import Team from '../server/models/team'
 
 let i
 
+/**
+ * Removes all the documents for the given model
+ * @param  {Function}  model
+ * @return {Promise}
+ */
 const removeAll = async (model: Function): Promise<any> => {
   const removed = await model.remove({})
   return Promise.resolve(removed)
 }
+
+/**
+ * Saves the document for the given model
+ * @param  {Function}  model
+ * @return {Promise}
+ */
 const save = async (model: Function, data: Object): Promise<any> => {
   const added = await model(data).save()
   return Promise.resolve(added)
 }
 
+/**
+ * If all the promises are resolved, we quit the program
+ */
 const isEverythingFinished = (): void => {
   i -= 1
   if (i === 0) {
@@ -28,9 +42,11 @@ const isEverythingFinished = (): void => {
   }
 }
 
+// Connection to MongoDB
 Mongoose.Promise = global.Promise
 Mongoose.connect(`mongodb://${MONGO_SERVER}/${DB_NAME}`, { useMongoClient: true })
 
+// Using remove as a parameter in a terminal will remove everything in the DB
 if (process.argv[2] !== null && process.argv[2] === 'remove') {
   i = 4
   removeAll(Game).then(() => {
@@ -46,6 +62,8 @@ if (process.argv[2] !== null && process.argv[2] === 'remove') {
     isEverythingFinished()
   })
 } else {
+  // If no parameter was used, then we save everything from the data.json file
+  // flow-disable-next-line
   const JsonData = JSON.parse(fs.readFileSync(path.resolve(__dirname, './data.json')))
   const {
     games,

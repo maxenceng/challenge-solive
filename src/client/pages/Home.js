@@ -4,11 +4,11 @@ import React from 'react'
 
 import Games from '../containers/Games'
 import Players from '../containers/Players'
-import Template from '../containers/Template'
+import ContentDisplay from '../containers/ContentDisplay'
 import DynamicHelmet from '../components/DynamicHelmet'
 
 /**
- * Displayed on the /about route
+ * Displayed on the home route
  */
 export default () =>
   (
@@ -21,6 +21,7 @@ export default () =>
       <h1>Settings</h1>
       <Players />
       <Games />
-      <Template />
+      <h1>Template</h1>
+      <ContentDisplay />
     </div>
   )

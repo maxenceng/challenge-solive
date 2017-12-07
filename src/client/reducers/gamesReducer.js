@@ -20,7 +20,7 @@ export const initialState = Immutable.fromJS({
 })
 
 /**
- * Modifies the state if SAY_OKAY is called
+ * Modifies the state if one of the actions has been called
  * @param  {ImmutType} state
  * @param  {string} type
  * @param  {any} payload

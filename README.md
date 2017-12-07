@@ -1,8 +1,6 @@
-# React Koa SSR
+# Challenge Solive
 
-### Boilerplate with React, Redux, Koa with server-side rendering
-
-Dev(need 2 terminals):
+Development mode (need 2 terminals):
 - 1st terminal:
 ```
 yarn dev:koa
@@ -12,11 +10,12 @@ yarn dev:koa
 yarn dev:wds
 ```
 
-Prod:
+Production mode:
 ```
-yarn prod:build
+yarn prod:build && yarn prod:start
 ```
-then
+
+Stop the prod server:
 ```
-yarn prod:start
+yarn prod:stop
 ```

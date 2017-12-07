@@ -6,9 +6,6 @@ import { getAll, getOne, getTwo, create, update, remove } from '../controllers/t
 
 const index = new Router()
 
-/**
- * Calls the get function in our controller for our index route of this subrouter
- */
 index.get('/', getAll)
 index.get('/:id', getOne)
 index.get('/:id1/:id2', getTwo)

@@ -26,5 +26,6 @@ export default createStore(
     teamsMedias: immutable.fromJS(preloadedState.teamsMedias),
     playerMedia: immutable.fromJS(preloadedState.playerMedia),
   },
-  IS_PROD ? applyMiddleware(thunkMiddleware, promise) : applyMiddleware(thunkMiddleware, promise) //, logger),
+  // If we are not in production, then we also use redux-logger
+  IS_PROD ? applyMiddleware(thunkMiddleware, promise) : applyMiddleware(thunkMiddleware, promise, logger),
 )

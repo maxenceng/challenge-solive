@@ -16,7 +16,7 @@ const selector = document.querySelector(QUERY_SELECTOR)
 // flow-disable-next-line
 ReactDOM.hydrate(wrapApp(App, store), selector)
 
-// HMR
+// Hot Module Reload
 if (module.hot) {
   // flow-disable-next-line
   module.hot.accept('./App', () => {
