@@ -19,3 +19,13 @@ Stop the prod server:
 ```
 yarn prod:stop
 ```
+
+Populate the DB with data.json
+```
+yarn import:data
+```
+
+Remove everything from the DB
+```
+yarn import:data remove
+```
